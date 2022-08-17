@@ -16,3 +16,4 @@ This is a solution to the [Expenses chart component Challenge](https://www.front
 
  - Frontend Mentor - [Macdeesh](https://www.frontendmentor.io/profile/macdeesh)
  - Twitter - [@Macdiish](https://twitter.com/Macdiish)
+ - Big Thanks to [@Elaine](https://github.com/elaineleung)
