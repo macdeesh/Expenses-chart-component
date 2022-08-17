@@ -1,0 +1,214 @@
+:root {
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+    --Strong-Cyan: hsl(174, 86%, 45%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background: var(--Cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 500px;
+    margin: 3rem 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.heading-section {
+    background: var(--Soft-red);
+    color: var(--Very-pale-orange);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.my-balance {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.spending-section {
+    background: var(--Very-pale-orange);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.days-graph {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 1.5rem 0 3rem;
+}
+
+.days-graph p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--Medium-brown);
+}
+
+.graphic {
+    background: var(--Soft-red);
+    width: 2.8rem;
+    height: 4rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.graphic:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.amount {
+    background: var(--Dark-brown);
+    width: 3.8rem;
+    height: 2rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Very-pale-orange);
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: ease-in-out 0.4s;
+}
+
+.weekly-info::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    bottom: 6rem;
+    background: var(--Cream);
+}
+
+.weekly-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 1rem 0;
+}
+
+.weekly-info span {
+    color: var(--Medium-brown);
+}
+
+.total-week-expense {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.average-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.average-day p {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 540px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .my-balance {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .heading-section {
+        width: 310px;
+        padding: 1rem;
+    }
+
+    .spending-section {
+        width: 310px;
+    }
+
+    .graphic {
+        width: 2rem;
+    }
+
+    .amount {
+        width: 2.2rem;
+        font-size: 0.6rem;
+    }
+
+    .days-graph p {
+        font-size: 0.8rem;
+    }
+
+    .weekly-info {
+        margin-bottom: 0;
+    }
+
+    .total-week-expense {
+        font-size: 1.8rem;
+    }
+
+
+}
