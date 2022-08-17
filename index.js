@@ -1,5 +1,16 @@
 
-import expenses from "./data.json" assert {type: 'json'};// Importing local data.json
+function getData() {
+    fetch("./data.json")
+        .then((response) => {
+            return response.json();
+        })
+        .then((dataExpenses) => {
+            weekValue(dataExpenses)  // this is the main function where we pass in the data
+        })
+        .catch((error) => console.log(error));
+}
+
+getData();
 
 const spanAmount = document.querySelectorAll(".amount");
 const spanGraphic = document.querySelectorAll(".graphic");
@@ -7,19 +18,12 @@ const total = document.querySelector(".total-week-expense");
 const average = document.querySelector(".average");
 const weekDays = document.querySelectorAll(".one-day");
 const today = new Date(); // get the actual date 
-var dataExpenses = expenses.map(importedJson);// This to create a variable from the imported data.
 
+function weekValue(dataExpenses) {
 
-
-function importedJson(item) {// This transform the data of Json and to be used as function for map().
-    return item;
-}
-
-function weekValue() {
-
-    var arrayOfAmounts = [];// empty array to store the daily expense.
-    var arrayOfDays = [];//  empty array to store the weekdays. 
-    var sumOfExpenses = 0;
+    let arrayOfAmounts = [];// empty array to store the daily expense.
+    let arrayOfDays = [];//  empty array to store the weekdays. 
+    let sumOfExpenses = 0;
 
     for (let i = 0; i < dataExpenses.length; i++) {
         arrayOfDays.push(dataExpenses[i].day);// add the day from data.
@@ -48,8 +52,6 @@ function weekValue() {
     }
 
 }
-
-window.addEventListener('load', weekValue);// pass the values when page loaded.
 
 for (let i = 0; i < spanGraphic.length; i++) {// This hover effect a previous sibling that i couldn't make it with css.
 
